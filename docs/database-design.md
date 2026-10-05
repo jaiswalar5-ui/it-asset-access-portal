@@ -43,6 +43,16 @@ The application uses a relational SQLite database.
 - `created_at`
 - `updated_at`
 
+### `access_assignments`
+- `id` (PK)
+- `user_id` (FK to `users.id`)
+- `application_name` (String)
+- `access_type` (String)
+- `granted_by` (FK to `users.id`)
+- `granted_at`
+- `revoked_at` (nullable)
+- `status` (Enum: ACTIVE, REVOKED)
+
 ### `audit_logs`
 - `id` (PK)
 - `user_id` (FK to `users.id`, nullable)
