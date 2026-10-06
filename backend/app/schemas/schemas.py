@@ -15,7 +15,12 @@ class UserResponse(BaseModel):
     name: str
     email: str
     role: str
-    department: str
+    department: Optional[str] = None
+    manager_id: Optional[int] = None
+    is_active: bool
 
     class Config:
         from_attributes = True
+
+class UserStatusUpdate(BaseModel):
+    is_active: bool
